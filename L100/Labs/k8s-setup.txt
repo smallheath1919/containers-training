@@ -39,13 +39,13 @@ az vm create \
     --size Standard_D2s_v3 \
     --os-disk-size-gb 50
 
-# INSTALL cks-master
+# INSTALL k8s-master
 ssh azureuser@$(az vm list-ip-addresses -n k8s-master -g $RG --query [0].virtualMachine.network.publicIpAddresses[0].ipAddress -o tsv)
 sudo -i
 bash <(curl -s https://raw.githubusercontent.com/killer-sh/cks-course-environment/master/cluster-setup/latest/install_master.sh)
 
 
-# INSTALL cks-worker
+# INSTALL k8s-worker
 ssh azureuser@$(az vm list-ip-addresses -n k8s-worker -g $RG --query [0].virtualMachine.network.publicIpAddresses[0].ipAddress -o tsv)
 sudo -i
 bash <(curl -s https://raw.githubusercontent.com/killer-sh/cks-course-environment/master/cluster-setup/latest/install_worker.sh)
