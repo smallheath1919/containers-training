@@ -1,3 +1,3 @@
 FROM nginx:latest
-EXPOSE 8number
+EXPOSE 80
 RUN echo "This is container number">/usr/share/nginx/html/index.html
