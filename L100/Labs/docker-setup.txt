@@ -14,7 +14,7 @@ az vm create \
 #Login to the docker VM
 ssh azureuser@$(az vm list-ip-addresses -n dockerlab -g $RG --query [0].virtualMachine.network.publicIpAddresses[0].ipAddress -o tsv)
 
-#Set up the repository
+#Set up docker
 sudo -i
 apt-get update
 apt-get install \
