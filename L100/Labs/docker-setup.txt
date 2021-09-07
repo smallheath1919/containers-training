@@ -1,7 +1,7 @@
 #Set up environment variables
 RG=<your-resource-group-name>
 
-#Create docker VM
+#Create docker VM on Azure
 az vm create \
     --resource-group $RG \
     --name dockerlab \
